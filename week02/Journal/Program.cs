@@ -4,19 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Journal Project.");
+        Console.WriteLine("Welcome to the Journal Program!");
 
         Journal journal = new Journal();
 
         while (true)
         {
-            Console.WriteLine("\nChoose an option:");
-            Console.WriteLine("1. Write a new entry");
-            Console.WriteLine("2. Display all entries");
-            Console.WriteLine("3. Save journal to a file");
-            Console.WriteLine("4. Load journal from a file");
-            Console.WriteLine("5. Exit");
-            Console.Write("Your choice: ");
+            Console.WriteLine("\nPlease select one of the following choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
             string choice = Console.ReadLine();
 
             if (choice == "1")
@@ -43,16 +43,17 @@ class Program
             }
             else if (choice == "3")
             {
-                Console.Write("Enter the filename to save the journal (e.g., my_journal.txt): ");
-                string fileName = Console.ReadLine();
-                journal.SaveToFile(fileName);
-            }
-            else if (choice == "4")
-            {
                 Console.Write("Enter the filename to load the journal from (e.g., my_journal.txt): ");
                 string fileName = Console.ReadLine();
                 journal.LoadFromFile(fileName);
             }
+            else if (choice == "4")
+            {
+                Console.Write("Enter the filename to save the journal (e.g., my_journal.txt): ");
+                string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
+            }    
+
             else if (choice == "5")
             {
                 Console.WriteLine("Goodbye!");
